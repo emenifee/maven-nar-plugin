@@ -22,11 +22,11 @@
   <parent>
     <artifactId>maven-plugins</artifactId>
     <groupId>org.apache.maven.plugins</groupId>
-    <version>18</version>
+    <version>22</version>
   </parent>
 
   <artifactId>maven-nar-plugin</artifactId>
-  <version>2.1-SNAPSHOT</version>
+  <version>2.1-ECM2-SNAPSHOT</version>
   <packaging>maven-plugin</packaging>
 
   <name>Maven NAR Plugin</name>
@@ -35,7 +35,9 @@
   </description>
   <url>http://duns.github.com/maven-nar-plugin/</url>
 
+
   <!-- deploy to duns' github repository -->
+  <!-- ECM do not have a repository setup.
   <distributionManagement>
     <repository>
       <id>duns-maven-releases</id>
@@ -48,29 +50,32 @@
       <name>Duns' Maven Snapshots</name>
       <url>file:///Users/duns/sonatype/git/maven-snapshots</url>
     </snapshotRepository>
+    --> 
   <!-- temporarily until we have a fixed site -->
-    <site>
+  <!-- ECM do not have a repository setup.
+  <site>
       <id>local</id>
       <url>file:///Users/duns/sonatype/git/maven-nar-plugin-site</url>
     </site>
   </distributionManagement>
-
+-->
   <prerequisites>
-    <maven>2.0.9</maven>
+    <maven>2.2.1</maven>
   </prerequisites>
 
   <scm>
-    <connection>scm:git:git://github.com/duns/maven-nar-plugin.git</connection>
-    <developerConnection>scm:git:git://github.com/duns/maven-nar-plugin.git</developerConnection>
-    <url>http://github.com/duns/maven-nar-plugin</url>
+    <connection>scm:git:git://github.com/emenifee/maven-nar-plugin.git</connection>
+    <developerConnection>scm:git:git://github.com/emenifee/maven-nar-plugin.git</developerConnection>
+    <url>http://github.com/emenifee/maven-nar-plugin</url>
   </scm>
+  <!-- ECM not sure what this is for...
   <issueManagement>
     <system>jira</system>
     <url>http://issues.sonatype.org/browse/NAR</url>
   </issueManagement>
-
+-->
   <properties>
-    <mavenVersion>2.0.9</mavenVersion>
+    <mavenVersion>2.2.1</mavenVersion>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
@@ -141,7 +146,7 @@
     <dependency>
       <groupId>net.sf.antcontrib</groupId>
       <artifactId>cpptasks-parallel</artifactId>
-      <version>1.0-beta-5-parallel-1-SNAPSHOT</version>
+      <version>1.0-beta-5-parallel-ecm2-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>org.apache.bcel</groupId>
@@ -182,8 +187,8 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
-          <source>1.4</source>
-          <target>1.4</target>      
+          <source>1.7</source>
+          <target>1.7</target>      
         </configuration>
       </plugin>
     </plugins>
